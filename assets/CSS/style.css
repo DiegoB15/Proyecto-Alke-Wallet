@@ -1,0 +1,155 @@
+/* style.css */
+
+:root {
+    --primary-color: #d6cfe1;
+    --secondary-color: #0dcaf0;
+    --dark-bg: #f8f9fa;
+}
+
+body {
+    background-color: var(--dark-bg);
+    font-family: Arial, Helvetica, sans-serif ;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+    opacity: 0.9;
+}
+
+header {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    padding: 1rem;
+    box-shadow: 0 4px 15px rgba(8, 39, 17, 0.4);
+}
+
+
+footer {
+    background: var(--dark);
+    color: #0c0101;
+    padding: 1rem;
+    text-align: center;
+    margin-top: auto;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.movimiento {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.movimiento:hover {
+    background-color: #e9ecef;
+}
+
+.movimiento.activo {
+    background-color: #e2e6ea;
+    border-left: 5px solid var(--primary-color);
+}
+
+.text-ingreso {
+    color: #198754;
+    font-weight: bold;
+}
+
+.text-egreso {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.shake {
+    animation: shake 0.3s;
+}
+
+.nuevo-contacto {
+    background-color: #4f93ce;
+    
+}
+
+@media (max-width: 810px) {
+
+    h1,
+    .display-4 {
+        font-size: 2rem !important;
+    }
+
+    main {
+        padding-top: 1rem;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+
+    .card {
+        margin-bottom: 15px;
+        height: auto;
+    }
+
+    #detalle {
+        margin-top: 20px;
+    }
+}

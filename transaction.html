@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="assets/CSS/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="h4 m-0 text-white">📋 Historial 📋</h1>
+            <a href="menu.html" class="btn btn-outline-light btn-sm"> ← Volver al Menú</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2 class="mb-4">Movimientos Recientes </h2>
+
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="card bg-success text-white mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Ingresos</h5>
+                        <h3 id="totalIngresos">$0</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card bg-danger text-white">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Egresos</h5>
+                        <h3 id="totalEgresos">$0</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-group mb-3" role="group">
+            <button onclick="filtrar('todos')" class="btn btn-outline-secondary">Todos</button>
+            <button onclick="filtrar('ingreso')" class="btn btn-outline-success">Ingresos</button>
+            <button onclick="filtrar('egreso')" class="btn btn-outline-danger">Egresos</button>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <div class="list-group shadow-sm">
+                    <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center movimiento ingreso"
+                        data-monto="50000">
+                        <div>
+                            <span class="fw-bold desc">Depósito Inicial</span>
+                            <br><small class="text-muted">1 Ene 2026</small>
+                        </div>
+                        <span class="text-ingreso">+$50.000</span>
+                    </div>
+
+                    <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center movimiento egreso"
+                        data-monto="-15000">
+                        <div>
+                            <span class="fw-bold desc">Pago Netflix</span>
+                            <br><small class="text-muted">1 Ene 2026</small>
+                        </div>
+                        <span class="text-egreso">-$15.000</span>
+                    </div>
+
+                    <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center movimiento ingreso"
+                        data-monto="20000">
+                        <div>
+                            <span class="fw-bold desc">Transferencia Recibida</span>
+                            <br><small class="text-muted">2 Ene 2026</small>
+                        </div>
+                        <span class="text-ingreso">+$20.000</span>
+                    </div>
+
+                    <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center movimiento ingreso"
+                        data-monto="20000">
+                        <div>
+                            <span class="fw-bold desc">Transferencia Recibida Sence</span>
+                            <br><small class="text-muted">6 Ene 2026</small>
+                        </div>
+                        <span class="text-ingreso">+$2.800</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mt-3 mt-md-0">
+                <div id="detalle">
+                    <div class="alert alert-info">Selecciona un movimiento para ver detalles 👆</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Alke Wallet "D.B". Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+        <script src="assets/JS/jquery-3.7.1.min.js"></script>
+
+    <script src="assets/JS/script.js"></script>
+</body>
+
+</html>

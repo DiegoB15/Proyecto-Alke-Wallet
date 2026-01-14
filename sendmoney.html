@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar Dinero</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="assets/CSS/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="h4 m-0 text-white">💸 Enviar Dinero 💸</h1>
+            <a href="menu.html" class="btn btn-outline-light btn-sm"> ← Volver al Menú</a>
+        </div>
+    </header>
+
+    <main class="container">
+    <div class="mb-3">
+        <input type="text" id="buscarContacto" class="form-control" placeholder="🔍 Buscar contacto...">
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Contactos</h2>
+        <button id="btnAgregar" class="btn btn-primary">+ Agregar Contacto</button>
+    </div>
+
+    <ul id="listaContactos" class="list-group shadow-sm">
+        
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+                <h6 class="mb-0 fw-bold">Daniel Frahn</h6>
+                <small class="text-muted">Banco Estado</small>
+            </div>
+            <button class="btn btn-sm btn-outline-primary btn-enviar-dinero">Enviar</button>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+                <h6 class="mb-0 fw-bold">Sence</h6>
+                <small class="text-muted">Banco Estado</small>
+            </div>
+            <button class="btn btn-sm btn-outline-primary btn-enviar-dinero">Enviar</button>
+        </li>
+    </ul>
+</main>
+<!-- Nuevo contacto -->
+<div class="modal fade" id="modalContacto" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Nuevo Contacto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="nombre" class="form-control mb-2" placeholder="Nombre">
+                    <input type="text" id="rut" class="form-control mb-2" placeholder="RUT">
+                    <input type="text" id="alias" class="form-control mb-2" placeholder="Alias">
+                    <input type="text" id="banco" class="form-control mb-2" placeholder="Banco">
+                    <div id="errorModal" class="text-danger mt-2"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" id="guardarContacto" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Transferencia -->
+<div class="modal fade" id="modalTransferencia" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Realizar Transferencia</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formTransferencia">
+                    <div class="mb-3">
+                        <label class="form-label">Destinatario</label>
+                        <input type="text" id="destinatarioNombre" class="form-control" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Monto a transferir</label>
+                        <input type="number" id="montoTransferencia" class="form-control" placeholder="$ 0">
+                    </div>
+                    <p id="mensajeTransferencia" class="fw-bold d-none"></p>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-success">Confirmar Transferencia</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <footer>
+        <p>&copy; 2026 Alke Wallet "D.B". Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <script src="assets/JS/jquery-3.7.1.min.js"></script>
+
+    <script src="assets/JS/script.js"></script>
+</body>
+
+</html>
